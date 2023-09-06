@@ -1,79 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Twitter Sentiment Analysis</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            padding: 20px;
-        }
-        h1 {
-            font-size: 24px;
-            color: #333;
-        }
-        h2 {
-            font-size: 20px;
-            color: #444;
-        }
-        p {
-            font-size: 16px;
-            color: #666;
-        }
-    </style>
-</head>
-<body>
-    <h1>Twitter Sentiment Analysis</h1>
+# Twitter Sentiment Analysis
 
-    <h2>Introduction</h2>
-    <p>
-        This project focuses on performing sentiment analysis on Twitter data using machine learning techniques. It aims to classify tweets as either positive or negative sentiment based on their textual content. The project utilizes a dataset of tweets and applies natural language processing and machine learning models to make sentiment predictions.
-    </p>
+## Introduction
+This project focuses on performing sentiment analysis on Twitter data using machine learning techniques. It aims to classify tweets as either positive or negative sentiment based on their textual content. The project utilizes a dataset of tweets and applies natural language processing and machine learning models to make sentiment predictions.
 
-    <h2>Prerequisites</h2>
-    <p>
-        Before running the code, ensure you have the following libraries and tools installed:
-    </p>
-    <ul>
-        <li>Python 3.x</li>
-        <li>Jupyter Notebook or any Python IDE</li>
-        <li>Required Python libraries (NumPy, Pandas, Seaborn, Matplotlib, NLTK, Scikit-learn, WordCloud)</li>
-    </ul>
+## Prerequisites
+Before running the code, ensure you have the following libraries and tools installed:
+- Python 3.x
+- Jupyter Notebook or any Python IDE
+- Required Python libraries (NumPy, Pandas, Seaborn, Matplotlib, NLTK, Scikit-learn, WordCloud)
 
-    <h2>Dataset</h2>
-    <p>
-        The dataset used in this project is sourced from a CSV file named <code>training.1600000.processed.noemoticon.csv</code>. It contains the following columns:
-    </p>
-    <!-- Add more content about the dataset here -->
+## Dataset
+The dataset used in this project is sourced from a CSV file named `training.1600000.processed.noemoticon.csv`. It contains the following columns:
+- target: Sentiment label (0 for negative, 4 for positive)
+- ids: Tweet ID
+- date: Date of the tweet
+- flag: Flag (not used in this analysis)
+- user: User who posted the tweet
+- text: The tweet's text content
 
-    <h2>Data Preprocessing</h2>
-    <p>
-        <!-- Describe the data preprocessing steps here -->
-    </p>
+## Data Preprocessing
+- The dataset is loaded and columns irrelevant to sentiment analysis are removed.
+- Text preprocessing includes cleaning, lemmatization, and replacing URLs, emojis, and mentions with placeholders.
+- Stop words are removed, and text data is tokenized.
 
-    <!-- Include sections for EDA, Model Building, Model Evaluation, Saving Models, Predicting Sentiments, and Usage -->
+## Exploratory Data Analysis (EDA)
+- EDA is performed to visualize the distribution of sentiment labels in the dataset.
+- Word clouds are generated to visualize the most frequent words in positive and negative tweets.
 
-    <h2>Note</h2>
-    <p>
-        - Ensure that the dataset file <code>training.1600000.processed.noemoticon.csv</code> is available in the specified path.<br>
-        - You may need to modify file paths for saving and loading models.
-    </p>
+## Model Building
+Three machine learning models are trained and evaluated for sentiment classification:
+1. Logistic Regression
+2. Linear Support Vector Classifier (LinearSVC)
+3. Bernoulli Naive Bayes (BernoulliNB)
 
-    <h2>Contributors</h2>
-    <p>
-        - [Your Name]
-    </p>
+## Model Evaluation
+- Model performance metrics such as precision, recall, F1-score, and confusion matrices are displayed for each model.
+- Logistic Regression demonstrates the best performance with an accuracy of approximately 82%.
 
-    <h2>License</h2>
-    <p>
-        This project is licensed under the [Your License] License.
-    </p>
+## Saving Models
+The trained models (vectorizer, Logistic Regression, and BernoulliNB) are saved using pickle for future use.
 
-    <h2>Acknowledgments</h2>
-    <p>
-        - Acknowledge any external libraries, code, or resources used in your project.
-    </p>
-</body>
-</html>
+## Predicting Sentiments
+A script is provided to predict the sentiments of user-provided tweets using the trained Logistic Regression model.
+
+## Usage
+1. Install the required libraries mentioned in the Prerequisites section.
+2. Run the Jupyter Notebook or Python script to execute the entire analysis.
+3. Use the provided script to predict the sentiment of user-provided tweets.
+
+
+
+
+
+
